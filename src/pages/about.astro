@@ -11,6 +11,10 @@
   const happy = true;
   const finished = false;
   const goal = 3;
+
+  const skillColor = "navy";
+  const fontWeight = "bolder";
+  const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -20,6 +24,16 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+      h1 {
+        color: purple;
+      }
+      .topic {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
 	</head>
 	<body>
     <a href="/">Home</a>
@@ -32,7 +46,7 @@
     </p>
     <p>Some topics that will be discussed in this blog are:</p>
     <ul>
-      {topics.map((topic) => <li>{topic}</li>)}
+      {topics.map((topic) => <li class="topic">{topic}</li>)}
     </ul>
     <p>Here is some information about me:</p>
     <ul>
