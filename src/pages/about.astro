@@ -1,7 +1,5 @@
 ---
-  import Header from '../components/Header.astro';
-  import Footer from '../components/Footer.astro';
-  import '../style/global.css';
+  import BaseLayout from '../layouts/BaseLayout.astro';
 
   const pageTitle = "About Shane's Blog";
   const topics = ["HTML", "CSS", "JavaScript", "Astro", "C#", ".NET"];
@@ -15,35 +13,10 @@
   const happy = true;
   const finished = false;
   const goal = 3;
-
-  const skillColor = "navy";
-  const fontWeight = "bolder";
-  const textCase = "uppercase";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textCase}}>
-      h1 {
-        color: purple;
-      }
-      .topic {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-	</head>
-	<body>
-    <Header />
-
-		<h1>~ {pageTitle} ~</h1>
-    <p>
+<BaseLayout pageTitle="About">
+		<p>
       This blog is focused on my personal coding experiences. Anything I have learned along the way and would like to share will be posted here for others to find. My goal is to help others.
     </p>
     <p>Some topics that will be discussed in this blog are:</p>
@@ -62,10 +35,4 @@
     {finished && <p>I finished this tutorial!</p>}
 
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-
-    <Footer />
-    <script>
-			import "../scripts/menu.js";
-  	</script>
-	</body>
-</html>
+</BaseLayout>
