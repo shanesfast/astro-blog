@@ -1,6 +1,11 @@
 html {
-  background-color: black;
+  background-color: lightskyblue;
   font-family: sans-serif;
+  color: darkslateblue;
+}
+
+html.dark {
+  background-color: darkslateblue;
   color: antiquewhite;
 }
 
@@ -53,6 +58,10 @@ h1 {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.dark .nav-links a {
+  color: antiquewhite;
 }
 
 .nav-links a:hover,
