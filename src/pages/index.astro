@@ -1,7 +1,9 @@
 ---
 	import BaseLayout from '../layouts/BaseLayout.astro';
+	import Greeting from '../components/Greeting.jsx';
 ---
 
 <BaseLayout pageTitle="Home">
 		<p>This is the home page, which is probably not needed for my intents.</p>
+		<Greeting client:load messages={["Welcome, friend", "Nice to see you", "Lovely day", "Glad you're here"]} />
 </BaseLayout>
