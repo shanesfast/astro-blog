@@ -1,0 +1,16 @@
+services:
+  app:
+    image: node:lts
+    container_name: astro-blog-app
+    command: >
+            sh -c
+            "
+            cd /app
+            && npm install
+            && npm run dev -- --host 0.0.0.0 &
+            tail -f /dev/null
+            "
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app/
